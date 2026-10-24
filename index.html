@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5ef">
+  <title>Haz tu pedido | Donde Valeska</title>
+  <style>
+    :root{--ink:#1e2922;--muted:#68746c;--green:#245b43;--lime:#d9edb9;--paper:#fff;--bg:#f4f5ef;--line:#e3e8df;--orange:#e9a76a}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+    .shell{min-height:100vh;display:grid;grid-template-columns:minmax(300px, .85fr) minmax(420px,1.15fr);max-width:1180px;margin:auto;padding:32px;gap:36px;align-items:center}
+    .intro{padding:24px 12px 24px 18px}.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:.02em}.brand-mark{width:38px;height:38px;border-radius:13px;background:var(--green);color:white;display:grid;place-items:center;font-size:20px}.eyebrow{margin:16px 0 12px;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.intro h1{max-width:470px;margin:0;font-family:Georgia,serif;font-size:clamp(46px,6vw,72px);font-weight:500;line-height:.99;letter-spacing:-.045em}.intro h1 em{color:var(--green);font-weight:500}.intro-copy{max-width:380px;margin:22px 0 0;color:var(--muted);font-size:16px}.steps{display:flex;gap:10px;margin-top:34px;flex-wrap:wrap}.step{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}.step b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#e6ecdf;color:var(--green);font-size:12px}.card{width:100%;max-width:570px;justify-self:center;background:var(--paper);border:1px solid #e9ede6;border-radius:24px;padding:32px;box-shadow:0 20px 65px #273e2c12}.card-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:26px}.card h2{margin:0;font-size:22px;letter-spacing:-.02em}.card-head p{margin:5px 0 0;color:var(--muted);font-size:14px}.fresh{white-space:nowrap;background:#edf5e5;color:var(--green);padding:7px 10px;border-radius:99px;font-size:11px;font-weight:750}.field{margin:0 0 20px}.field label,.product-label{display:block;margin-bottom:8px;font-size:13px;font-weight:700}.required{color:#d47d40}.input{width:100%;height:48px;padding:0 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font:inherit;outline:none;transition:.18s}.input:focus{border-color:#8eae8d;box-shadow:0 0 0 3px #e7f0e2}.input::placeholder{color:#9ca69f}.product-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}.product-head label{margin:0;font-size:13px;font-weight:700}.hint{font-size:12px;color:var(--muted)}.products{display:grid;gap:10px}.product-row{display:grid;grid-template-columns:minmax(0,1fr) 106px 40px;gap:8px;align-items:center}.product-row .input{height:44px}.qty-wrap{position:relative}.qty-wrap .input{padding-right:8px;text-align:center}.remove{width:40px;height:40px;border:0;background:#f5f6f2;color:#8c958e;border-radius:10px;font-size:20px;cursor:pointer}.remove:hover{background:#fbece5;color:#a24e32}.add{display:flex;align-items:center;gap:7px;margin-top:10px;border:0;background:none;padding:5px 0;color:var(--green);font:700 13px inherit;cursor:pointer}.add span{font-size:20px}.time-field{margin-top:23px}.total-box{display:flex;justify-content:space-between;align-items:center;margin:20px 0;padding:16px 17px;border:1px solid var(--line);border-radius:13px;background:#fbfcf9}.total-label{font-size:14px;font-weight:750}.total-sub{display:block;margin-top:2px;font-size:11px;font-weight:400;color:var(--muted)}.total-value{font-size:22px;font-weight:800;color:var(--green);letter-spacing:-.03em}.time-selects{display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center}.time-selects select{appearance:auto}.time-selects>span{color:var(--muted);font-weight:700}.note{display:flex;gap:10px;align-items:flex-start;padding:13px 14px;border-radius:12px;background:#f7f8f4;color:var(--muted);font-size:12px;margin:4px 0 20px}.note i{font-style:normal;color:var(--green);font-size:16px}.submit{width:100%;height:52px;display:flex;justify-content:center;align-items:center;gap:10px;border:0;border-radius:12px;background:var(--green);color:white;font:700 15px inherit;cursor:pointer;transition:.2s}.submit:hover{background:#194932;transform:translateY(-1px)}.submit svg{width:19px;height:19px;fill:currentColor}.fineprint{text-align:center;color:#929a93;font-size:11px;margin:12px 0 0}.error{display:none;margin:0 0 13px;padding:10px 12px;background:#fff0e9;color:#9f4426;border-radius:9px;font-size:13px}.footer{font-size:11px;color:#a0a79f;margin-top:44px}
+    @media(max-width:850px){.shell{grid-template-columns:1fr;max-width:650px;padding:25px 18px;gap:20px}.intro{padding:5px 3px}.eyebrow{margin-top:16px}.intro h1{font-size:54px}.intro-copy{margin-top:12px}.steps{margin-top:18px}.footer{display:none}.card{padding:25px}}
+    @media(max-width:480px){.shell{padding:18px 13px}.intro h1{font-size:46px}.card{padding:21px 17px;border-radius:19px}.fresh{font-size:10px;padding:6px 8px}.card-head{margin-bottom:22px}.product-row{grid-template-columns:minmax(0,1fr) 74px 36px;gap:6px}.product-row .input{padding-left:10px;padding-right:8px;font-size:14px}.remove{width:36px;height:40px}.hint{font-size:11px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="intro" aria-label="Presentación">
+      
+      
+      <h1>LA PICA´<br><em>DE LA NEGRA</em></h1>
+      <p class="eyebrow">Pedido para retirar</p>
+      <p class="intro-copy">Ingresa tu pedido y la hora de retiro. Recibiremos el pedido por WhatsApp y te confirmaremos si hay disponibilidad.</p>
+      <div class="steps"><span class="step"><b>1</b> Completa tu pedido</span><span class="step"><b>2</b> Envíalo por WhatsApp</span></div>
+      <p class="footer">Hecho con cariño · Donde Valeska</p>
+    </section>
+    <section class="card" aria-labelledby="form-title">
+      <div class="card-head"><div><h2 id="form-title">Tu pedido</h2><p>Completa los datos para prepararlo.</p></div><span class="fresh">● PARA RETIRAR</span></div>
+      <form id="order-form">
+        <div class="field"><label for="customer">Nombre <span class="required">*</span></label><input class="input" id="customer" name="customer" autocomplete="name" placeholder="¿Cómo te llamas?" required></div>
+        <div class="product-head"><label>Producto <span class="required">*</span></label><span class="hint">Agrega todos los que quieras</span></div>
+        <div class="products" id="products"></div>
+        <button class="add" type="button" id="add-product"><span>＋</span> Agregar otro producto</button>
+        <div class="field time-field"><label for="pickup-hour">Hora de retiro <span class="required">*</span></label><div class="time-selects"><select class="input" id="pickup-hour" aria-label="Hora" required><option value="" selected disabled>Hora</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option></select><span>:</span><select class="input" id="pickup-minute" aria-label="Minutos" required></select></div></div>
+        <div class="total-box"><div class="total-label">Total a pagar<span class="total-sub">$3.500 por anticucho</span></div><strong class="total-value" id="order-total">$0</strong></div>
+        <div class="note"><i>◷</i><span>Te contactaremos para confirmar la disponibilidad y el horario.</span></div>
+        <p class="error" id="error" role="alert"></p>
+        <button class="submit" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.93 9.93 0 0 0-8.46 15.12L2 22l5.05-1.55A10 10 0 1 0 12.04 2Zm0 18.2a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-3 .92.95-2.93-.2-.3a8.18 8.18 0 1 1 6.71 3.63Zm4.49-6.13c-.25-.13-1.48-.73-1.71-.81-.23-.09-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.39.11-.52.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.87-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.68.32-.23.25-.89.87-.89 2.12s.91 2.46 1.03 2.63c.13.17 1.8 2.75 4.36 3.85.61.26 1.08.42 1.45.54.61.19 1.16.16 1.59.1.49-.07 1.48-.61 1.69-1.2.21-.59.21-1.1.15-1.2-.06-.11-.23-.17-.49-.3Z"/></svg> Enviar pedido por WhatsApp</button>
+        <p class="fineprint">WhatsApp se abrirá con tu pedido listo para enviar.</p>
+      </form>
+    </section>
+  </main>
+  <script>
+    // Reemplaza este número por el WhatsApp del negocio, con código de país y sin +, espacios ni guiones.
+    // Ejemplo para Chile: 56912345678
+    const WHATSAPP_NUMBER = "56950669544";
+    const products = document.querySelector("#products");
+    const errorBox = document.querySelector("#error");
+
+    const UNIT_PRICE = 3500;
+    const totalElement = document.querySelector("#order-total");
+    const currency = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
+    function updateTotal() {
+      const count = [...products.querySelectorAll(".product-row")].reduce((sum, row) => {
+        const productName = row.querySelector(".product-name").value.trim();
+        return sum + (productName ? Number(row.querySelector(".product-quantity").value) || 0 : 0);
+      }, 0);
+      totalElement.textContent = currency.format(count * UNIT_PRICE);
+    }
+
+    function addProduct(name = "", quantity = "1") {
+      const row = document.createElement("div");
+      row.className = "product-row";
+      row.innerHTML = `
+        <input class="input product-name" aria-label="Producto" placeholder="Ej. Anticucho de vacuno" value="${escapeAttribute(name)}" required>
+        <div class="qty-wrap"><input class="input product-quantity" aria-label="Cantidad" type="number" min="1" step="1" value="${escapeAttribute(quantity)}" required></div>
+        <button class="remove" type="button" aria-label="Quitar producto" title="Quitar producto">×</button>
+      `;
+      row.querySelector(".remove").addEventListener("click", () => {
+        if (products.children.length > 1) row.remove();
+        else { row.querySelector(".product-name").value = ""; row.querySelector(".product-quantity").value = "1"; }
+        updateTotal();
+      });
+      row.querySelector(".product-quantity").addEventListener("input", updateTotal);
+      row.querySelector(".product-name").addEventListener("input", updateTotal);
+      products.appendChild(row);
+      updateTotal();
+    }
+    function escapeAttribute(value) { return String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;"); }
+    document.querySelector("#add-product").addEventListener("click", () => { addProduct(); products.lastElementChild.querySelector(".product-name").focus(); });
+    const hourSelect = document.querySelector("#pickup-hour");
+    const minuteSelect = document.querySelector("#pickup-minute");
+    function updateMinuteOptions() {
+      const allowedMinutes = hourSelect.value === "23" ? ["00"] : ["00", "15", "30", "45"];
+      minuteSelect.replaceChildren(...allowedMinutes.map(value => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        return option;
+      }));
+      minuteSelect.value = "00";
+    }
+    hourSelect.addEventListener("change", updateMinuteOptions);
+    updateMinuteOptions();
+    addProduct();
+
+    document.querySelector("#order-form").addEventListener("submit", event => {
+      event.preventDefault();
+      errorBox.style.display = "none";
+      const name = document.querySelector("#customer").value.trim();
+      const hour = document.querySelector("#pickup-hour").value;
+      const minute = document.querySelector("#pickup-minute").value;
+      const pickup = hour ? `${hour}:${minute}` : "";
+      const items = [...products.querySelectorAll(".product-row")].map(row => ({
+        name: row.querySelector(".product-name").value.trim(),
+        quantity: Number(row.querySelector(".product-quantity").value)
+      }));
+      if (!name || !pickup || items.some(item => !item.name || !Number.isInteger(item.quantity) || item.quantity < 1)) {
+        errorBox.textContent = "Revisa el nombre, los productos, las cantidades y la hora de retiro.";
+        errorBox.style.display = "block";
+        return;
+      }
+      if (!/^\d{8,15}$/.test(WHATSAPP_NUMBER)) {
+        errorBox.textContent = "Configura el número de WhatsApp del negocio en el archivo HTML antes de usar el envío.";
+        errorBox.style.display = "block";
+        return;
+      }
+      const total = items.reduce((sum, item) => sum + item.quantity * UNIT_PRICE, 0);
+      const productLines = items.map(item => `• ${item.name} — cantidad: ${item.quantity}`).join("\n");
+      const message = `¡Hola! Quiero hacer este pedido:\n\nNombre: ${name}\n\nProductos:\n${productLines}\n\nTotal a pagar: ${currency.format(total)}\nHora de retiro: ${pickup}`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
